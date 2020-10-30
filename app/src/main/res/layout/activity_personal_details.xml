@@ -13,18 +13,19 @@
         android:layout_height="150dp"
         android:elevation="5dp" />
 
-
     <TextView
         android:id="@+id/tvSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:elevation="10dp"
+        android:transitionName="tvLogin"
         android:text="Introduce Yourself"
         android:textColor="@color/colorWhite"
         android:textSize="25sp"
-        android:textStyle="bold"
-        android:transitionName="tvLogin" />
+        android:textStyle="bold" />
+
 
     <ScrollView
         android:layout_width="match_parent"
