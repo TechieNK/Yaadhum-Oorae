@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/bgHeader"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="102dp"
         android:elevation="5dp" />
 
     <TextView
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:elevation="10dp"
         android:text="SIGNUP"
         android:textColor="@color/colorWhite"
@@ -39,7 +39,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv"
                 android:layout_width="match_parent"
-                android:layout_height="290dp"
+                android:layout_height="310dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:cardCornerRadius="20dp"
                 app:cardBackgroundColor="@color/colorWhite"

@@ -27,12 +27,12 @@ import java.util.HashMap;
 
 public class PersonalDetailsActivity extends AppCompatActivity {
 
-    private EditText NameET, MobilenoET,CityET,DistrictET;
+    private EditText NameET,CityET,DistrictET;
     private TextView MaleT, FemaleT, OtherT, DateT,farmerT,driverT,factoryownerT;
     private Button NextButton;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     boolean maleb,femaleb, otherb,farmerb,driverb,factoryownerb;
-    String name,gender,date,role,mobileno,city,district;
+    String name,gender,date,role,city,district;
     int year,month,day;
     private FirebaseAuth mAuth;
     private DatabaseReference usersRef;
@@ -173,7 +173,6 @@ public class PersonalDetailsActivity extends AppCompatActivity {
 
 
         NameET = findViewById(R.id.pd_name);
-        MobilenoET = findViewById(R.id.mobileno);
         CityET = findViewById(R.id.pd_city);
         DistrictET = findViewById(R.id.pd_district);
         NextButton = findViewById(R.id.nextBtn);
@@ -199,17 +198,15 @@ public class PersonalDetailsActivity extends AppCompatActivity {
                         role = "Factory-Owner";
                 }
                 name=NameET.getText().toString();
-                mobileno = MobilenoET.getText().toString();
                 city = CityET.getText().toString();
                 district = DistrictET.getText().toString();
-                if(TextUtils.isEmpty(name) || TextUtils.isEmpty(date) || TextUtils.isEmpty(gender) || TextUtils.isEmpty(role) ||
-                        TextUtils.isEmpty(mobileno) || TextUtils.isEmpty(city) || TextUtils.isEmpty(district))
+                if(TextUtils.isEmpty(name) || TextUtils.isEmpty(date) || TextUtils.isEmpty(gender) || TextUtils.isEmpty(role) || TextUtils.isEmpty(city) || TextUtils.isEmpty(district))
                 {
                     Toast.makeText(PersonalDetailsActivity.this,  "Please fill the details. ", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(!(TextUtils.isEmpty(name) && TextUtils.isEmpty(date) && TextUtils.isEmpty(gender) && TextUtils.isEmpty(role) &&
-                        TextUtils.isEmpty(mobileno) && TextUtils.isEmpty(city) && TextUtils.isEmpty(district)))
+                        TextUtils.isEmpty(city) && TextUtils.isEmpty(district)))
                 {
 
                     usersRef = FirebaseDatabase.getInstance().getReference("Users");
@@ -218,7 +215,6 @@ public class PersonalDetailsActivity extends AppCompatActivity {
                     result.put("Name",name);
                     result.put("DOB",date);
                     result.put("Gender",gender);
-                    result.put("Mobile No",mobileno);
                     result.put("City","city");
                     result.put("District",district);
                     result.put("Role",role);

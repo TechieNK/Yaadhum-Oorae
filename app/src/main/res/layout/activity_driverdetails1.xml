@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/bgHeader"
         android:layout_width="match_parent"
-        android:layout_height="174dp"
+        android:layout_height="80dp"
         android:elevation="5dp" />
 
     <TextView
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:elevation="10dp"
         android:text="Vehicle Details"
         android:textColor="@color/colorWhite"
@@ -30,14 +30,17 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/tvdriverdetails1"
+        android:layout_marginTop="15dp"
         android:background="@drawable/pickup" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/bgHeader"
-        android:layout_margin="20dp">
+        android:layout_margin="20dp"
+        android:layout_marginTop="0dp">
         <RelativeLayout
             android:id="@+id/rlayout"
             android:layout_width="match_parent"
