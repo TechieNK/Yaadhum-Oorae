@@ -99,18 +99,19 @@
                 android:layout_centerInParent="true"
                 android:layout_marginRight="30dp"
                 android:layout_alignParentRight="true" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="163dp"
+                android:layout_marginLeft="163dp"
                 android:text="Sign In"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"
                 android:textSize="25sp"
-                android:layout_centerInParent="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="30dp" />
+                android:textStyle="bold" />
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
