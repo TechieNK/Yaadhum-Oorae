@@ -59,7 +59,7 @@
                         android:layout_margin="10dp"
                         android:text="Email"
                         android:padding="5dp"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="#000000"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Password"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="#000000"
                         android:textSize="18sp"
                         android:padding="5dp"
                         android:textStyle="bold" />
