@@ -27,12 +27,12 @@ import java.util.HashMap;
 
 public class PersonalDetailsActivity extends AppCompatActivity {
 
-    private EditText NameET, NickNameET;
-    private TextView MaleT, FemaleT, OtherT, DateT;
+    private EditText NameET, MobilenoET,CityET,DistrictET;
+    private TextView MaleT, FemaleT, OtherT, DateT,farmerT,driverT,factoryownerT;
     private Button NextButton;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-    boolean maleb,femaleb, otherb;
-    String name,nickname,gender,date;
+    boolean maleb,femaleb, otherb,farmerb,driverb,factoryownerb;
+    String name,gender,date,role,mobileno,city,district;
     int year,month,day;
     private FirebaseAuth mAuth;
     private DatabaseReference usersRef;
@@ -47,7 +47,9 @@ public class PersonalDetailsActivity extends AppCompatActivity {
         FemaleT = findViewById(R.id.female_select);
         OtherT = findViewById(R.id.other_select);
         DateT = findViewById(R.id.pd_dob);
-
+        farmerT = findViewById(R.id.farmer_select);
+        factoryownerT = findViewById(R.id.factoryowner_select);
+        driverT = findViewById(R.id.driver_select);
 
         Toast.makeText(PersonalDetailsActivity.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
         DateT.setOnClickListener(new View.OnClickListener() {
@@ -123,11 +125,58 @@ public class PersonalDetailsActivity extends AppCompatActivity {
 
             }
         });
+        farmerT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                farmerT.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                driverT.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                farmerT.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                farmerT.setTextColor(getResources().getColor(R.color.colorWhite));
+                driverT.setTextColor(getResources().getColor(R.color.grey));
+                factoryownerT.setTextColor(getResources().getColor(R.color.grey));
+                farmerb = true;
+                driverb = false;
+                factoryownerb = false;
+            }
+        });
+        driverT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                farmerT.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                driverT.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                factoryownerT.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                driverT.setTextColor(getResources().getColor(R.color.colorWhite));
+                factoryownerT.setTextColor(getResources().getColor(R.color.grey));
+                farmerT.setTextColor(getResources().getColor(R.color.grey));
+                farmerb = false;
+                driverb = true;
+                factoryownerb = false;
+
+            }
+        });
+        factoryownerT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                farmerT.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                driverT.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                factoryownerT.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                factoryownerT.setTextColor(getResources().getColor(R.color.colorWhite));
+                farmerT.setTextColor(getResources().getColor(R.color.grey));
+                driverT.setTextColor(getResources().getColor(R.color.grey));
+                farmerb = false;
+                driverb = false;
+                factoryownerb = true;
+
+            }
+        });
+
+
 
         NameET = findViewById(R.id.pd_name);
-        NickNameET = findViewById(R.id.pd_nickname);
+        MobilenoET = findViewById(R.id.mobileno);
+        CityET = findViewById(R.id.pd_city);
+        DistrictET = findViewById(R.id.pd_district);
         NextButton = findViewById(R.id.nextBtn);
-
         NextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,14 +189,27 @@ public class PersonalDetailsActivity extends AppCompatActivity {
                     if(otherb)
                         gender = "Other";
                 }
+                if(farmerb || driverb || factoryownerb)
+                {
+                    if (farmerb)
+                        role = "Farmer";
+                    if(driverb)
+                        role = "Driver";
+                    if(factoryownerb)
+                        role = "Factory-Owner";
+                }
                 name=NameET.getText().toString();
-                nickname=NickNameET.getText().toString();
-                if(TextUtils.isEmpty(name) || TextUtils.isEmpty(date) || TextUtils.isEmpty(gender))
+                mobileno = MobilenoET.getText().toString();
+                city = CityET.getText().toString();
+                district = DistrictET.getText().toString();
+                if(TextUtils.isEmpty(name) || TextUtils.isEmpty(date) || TextUtils.isEmpty(gender) || TextUtils.isEmpty(role) ||
+                        TextUtils.isEmpty(mobileno) || TextUtils.isEmpty(city) || TextUtils.isEmpty(district))
                 {
                     Toast.makeText(PersonalDetailsActivity.this,  "Please fill the details. ", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(!(TextUtils.isEmpty(name)&&TextUtils.isEmpty(date)&&TextUtils.isEmpty(gender)))
+                if(!(TextUtils.isEmpty(name) && TextUtils.isEmpty(date) && TextUtils.isEmpty(gender) && TextUtils.isEmpty(role) &&
+                        TextUtils.isEmpty(mobileno) && TextUtils.isEmpty(city) && TextUtils.isEmpty(district)))
                 {
 
                     usersRef = FirebaseDatabase.getInstance().getReference("Users");
@@ -156,19 +218,32 @@ public class PersonalDetailsActivity extends AppCompatActivity {
                     result.put("Name",name);
                     result.put("DOB",date);
                     result.put("Gender",gender);
-                    if(!(TextUtils.isEmpty(nickname)))
-                    {
-                        result.put("Nickname",nickname);
-                    }
+                    result.put("Mobile No",mobileno);
+                    result.put("City","city");
+                    result.put("District",district);
+                    result.put("Role",role);
                     usersRef.child(uid).updateChildren(result).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful())
                             {
                                 Toast.makeText(PersonalDetailsActivity.this, "Great!", Toast.LENGTH_SHORT).show();
-                                Intent mainIntent = new Intent(PersonalDetailsActivity.this, MainActivity.class);
-                                mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                startActivity(mainIntent);
+                                if(role == "Driver") {
+                                    Intent mainIntent = new Intent(PersonalDetailsActivity.this, driverdetails1.class);
+                                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(mainIntent);
+                                }
+                                else if(role =="Farmer") {
+                                    Intent mainIntent = new Intent(PersonalDetailsActivity.this, Farmer1.class);
+                                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(mainIntent);
+                                }
+                                else if(role =="Factory-Owner") {
+                                    Intent mainIntent = new Intent(PersonalDetailsActivity.this, activity_vendor.class);
+                                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(mainIntent);
+                                }
+
                             }
                             else
                             {

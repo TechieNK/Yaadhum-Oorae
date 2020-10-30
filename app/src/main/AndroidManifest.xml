@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".driverdetails2"></activity>
+        <activity android:name=".driverdetails1" />
         <activity android:name=".PersonalDetailsActivity"></activity>
         <activity android:name=".activity_proposal_accept" />
         <activity android:name=".activity_vendor" />
-        <activity android:name=".Settings" />
         <activity android:name=".Verfiyemail" />
 
         <meta-data
