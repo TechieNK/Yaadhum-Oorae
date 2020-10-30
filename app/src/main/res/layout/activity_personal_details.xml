@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgrong"
-    tools:context=".Signup">
+    tools:context=".PersonalDetailsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/bgHeader"
@@ -13,14 +13,14 @@
         android:layout_height="150dp"
         android:elevation="5dp" />
 
+
     <TextView
         android:id="@+id/tvSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:elevation="10dp"
-        android:text="SIGNUP"
+        android:text="Introduce Yourself"
         android:textColor="@color/colorWhite"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -39,11 +39,9 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv"
                 android:layout_width="match_parent"
-                android:layout_height="290dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/colorWhite"
-                android:layout_margin="20dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="50dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
@@ -56,18 +54,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Email"
+                        android:text="Name"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
-                    "
+
                     <EditText
-                        android:id="@+id/signup_email"
+                        android:id="@+id/pd_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:inputType="textEmailAddress" />
+                        android:inputType="text" />
 
 
                     <TextView
@@ -75,35 +73,94 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Password"
+                        android:text="Date of Birth"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/signup_password"
+                    <TextView
+                        android:id="@+id/pd_dob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:height="45dp"
+                        android:text="DD/MM/YYYY"
+                        android:textStyle="bold"
+                        android:padding="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray"
                         android:layout_marginRight="10dp"
-                        android:inputType="textPassword" />
+                        />
+
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Retype Password"
+                        android:text="Gender"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <LinearLayout
+
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:padding="5dp"
+                            android:background="@drawable/outer_border_lt"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/male_select"
+                                android:layout_width="70dp"
+                                android:layout_height="45dp"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:text="Male"/>
+                            <TextView
+                                android:id="@+id/female_select"
+                                android:layout_width="70dp"
+                                android:layout_height="45dp"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:layout_toRightOf="@id/male_select"
+                                android:gravity="center"
+                                android:background="@android:color/white"
+                                android:text="Female"/>
+                            <TextView
+                                android:id="@+id/other_select"
+                                android:layout_width="70dp"
+                                android:layout_height="45dp"
+                                android:layout_toRightOf="@id/female_select"
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:background="@android:color/white"
+                                android:text="Other"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:text="Nickname"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/signup_confirm_password"
+                        android:id="@+id/pd_nickname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:inputType="textPassword" />
+                        android:hint="Optional"
+                        android:textColorHint="@color/grey"
+                        android:layout_marginRight="15dp"
+                        android:inputType="text" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -115,60 +172,22 @@
                 android:layout_alignLeft="@+id/cv"
                 android:layout_alignRight="@+id/cv"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="-40dp"
+                android:layout_marginTop="-30dp"
                 android:layout_marginRight="35dp"
                 android:elevation="10dp">
 
-
-
                 <Button
-                    android:id="@+id/signupButton"
+                    android:id="@+id/nextBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_ui"
-                    android:text="SIGN UP"
+                    android:text="NEXT"
+                    android:textSize="18sp"
                     android:textAllCaps="true"
                     android:textColor="@color/colorWhite" />
             </RelativeLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/r1"
-                android:padding="5dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="30dp"
-                android:layout_centerHorizontal="true"
-                >
 
-                <TextView
-                    android:id="@+id/txt2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tamil  "
-                    android:textColor="@color/colorWhite"
-                    android:layout_centerHorizontal="true"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    />
-                <ImageView
-                    android:id="@+id/ht_icc"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_toRightOf="@id/txt2"
-                    android:src="@drawable/heart"/>
-                <TextView
-                    android:id="@+id/txt3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/ht_icc"
-                    android:textColor="@color/colorWhite"
-                    android:text="  Forever"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    />
-
-            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
+
 </RelativeLayout>
