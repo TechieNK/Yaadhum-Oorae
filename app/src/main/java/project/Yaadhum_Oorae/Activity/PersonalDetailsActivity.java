@@ -130,7 +130,7 @@ public class PersonalDetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 farmerT.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                 driverT.setBackgroundColor(getResources().getColor(R.color.colorWhite));
-                farmerT.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                factoryownerT.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 farmerT.setTextColor(getResources().getColor(R.color.colorWhite));
                 driverT.setTextColor(getResources().getColor(R.color.grey));
                 factoryownerT.setTextColor(getResources().getColor(R.color.grey));

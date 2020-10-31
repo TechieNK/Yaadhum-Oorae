@@ -40,7 +40,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv"
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_height="250dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:cardCornerRadius="30dp"
                 app:cardBackgroundColor="@color/colorWhite"
