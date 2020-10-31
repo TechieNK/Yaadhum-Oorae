@@ -208,7 +208,7 @@ public class PersonalDetailsActivity extends AppCompatActivity {
                 if(!(TextUtils.isEmpty(name) && TextUtils.isEmpty(date) && TextUtils.isEmpty(gender) && TextUtils.isEmpty(role) &&
                         TextUtils.isEmpty(city) && TextUtils.isEmpty(district)))
                 {
-
+//
                     usersRef = FirebaseDatabase.getInstance().getReference("Users");
                     uid = mAuth.getCurrentUser().getUid();
                     HashMap<String,Object> result=new HashMap<>();
