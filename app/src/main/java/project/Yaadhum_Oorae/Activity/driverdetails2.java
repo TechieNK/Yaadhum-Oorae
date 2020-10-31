@@ -125,7 +125,7 @@ public class driverdetails2 extends AppCompatActivity {
                             if (task.isSuccessful())
                             {
                                 Toast.makeText(driverdetails2.this, "Great!", Toast.LENGTH_SHORT).show();
-                                Intent mainIntent = new Intent(driverdetails2.this, driverdetails1.class);
+                                Intent mainIntent = new Intent(driverdetails2.this, MainActivity.class);
                                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(mainIntent);
                             }
