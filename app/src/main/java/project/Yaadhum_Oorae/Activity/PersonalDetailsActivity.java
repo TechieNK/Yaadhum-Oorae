@@ -212,6 +212,7 @@ public class PersonalDetailsActivity extends AppCompatActivity {
                     usersRef = FirebaseDatabase.getInstance().getReference("Users");
                     uid = mAuth.getCurrentUser().getUid();
                     HashMap<String,Object> result=new HashMap<>();
+                    /*Hi*/
                     result.put("Name",name);
                     result.put("DOB",date);
                     result.put("Gender",gender);
@@ -224,18 +225,20 @@ public class PersonalDetailsActivity extends AppCompatActivity {
                             if (task.isSuccessful())
                             {
                                 Toast.makeText(PersonalDetailsActivity.this, "Great!", Toast.LENGTH_SHORT).show();
-                                if(role == "Driver")
+                                if(role.equals("Driver"))
                                 {
                                     Intent mainIntent = new Intent(PersonalDetailsActivity.this, driverdetails1.class);
                                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(mainIntent);
                                 }
-                                else if(role =="Farmer") {
+                                else if(role.equals("Farmer"))
+                                {
                                     Intent mainIntent = new Intent(PersonalDetailsActivity.this, Farmer1.class);
                                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(mainIntent);
                                 }
-                                else if(role =="Factory-Owner") {
+                                else if(role.equals("Factory-Owner"))
+                                {
                                     Intent mainIntent = new Intent(PersonalDetailsActivity.this, activity_vendor.class);
                                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(mainIntent);
