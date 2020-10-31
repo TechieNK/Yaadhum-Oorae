@@ -76,6 +76,22 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:inputType="text" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Mobile Number"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/mobileno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="phone" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -86,6 +102,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
                     <EditText
+                        android:id="@+id/add"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -100,6 +117,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
                     <EditText
+                        android:id="@+id/num"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -114,6 +132,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
                     <EditText
+                        android:id="@+id/raw"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"

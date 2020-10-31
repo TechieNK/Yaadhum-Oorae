@@ -224,7 +224,8 @@ public class PersonalDetailsActivity extends AppCompatActivity {
                             if (task.isSuccessful())
                             {
                                 Toast.makeText(PersonalDetailsActivity.this, "Great!", Toast.LENGTH_SHORT).show();
-                                if(role == "Driver") {
+                                if(role == "Driver")
+                                {
                                     Intent mainIntent = new Intent(PersonalDetailsActivity.this, driverdetails1.class);
                                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(mainIntent);

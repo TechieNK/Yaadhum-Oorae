@@ -70,7 +70,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:textSize="18sp"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/colorBlue"
                         android:inputType="text" />
 
                     <TextView
@@ -79,19 +79,19 @@
                         android:layout_margin="10dp"
                         android:text="Password"
                         android:textColor="#000000"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:padding="5dp"
                         android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/password_et"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="45dp"
                         android:layout_marginLeft="10dp"
-                        android:textSize="18sp"
-                        android:textColor="@color/colorWhite"
                         android:layout_marginRight="10dp"
-                        android:inputType="textPassword" />
+                        android:inputType="textPassword"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="20sp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -102,7 +102,7 @@
                 android:layout_alignLeft="@+id/cv"
                 android:layout_alignRight="@+id/cv"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="-50dp"
+                android:layout_marginTop="-40dp"
                 android:layout_marginRight="35dp"
                 android:elevation="10dp">
 

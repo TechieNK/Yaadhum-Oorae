@@ -60,7 +60,6 @@
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
-                    "
                     <EditText
                         android:id="@+id/signup_email"
                         android:layout_width="match_parent"

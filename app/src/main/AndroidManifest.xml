@@ -18,7 +18,7 @@
 
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/bg_ui" />
+            android:resource="@drawable/bg_ui" />
 
         <activity android:name=".Signup" />
         <activity android:name=".Login">

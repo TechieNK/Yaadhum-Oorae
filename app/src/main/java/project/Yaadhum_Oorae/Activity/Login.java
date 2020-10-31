@@ -66,17 +66,16 @@ public class Login extends AppCompatActivity {
 
         if(mAuth.getCurrentUser() != null && mAuth.getCurrentUser().isEmailVerified())
         {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), PersonalDetailsActivity.class));
             finish();
         }
-        /*
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        */
 
 
         googlesignin.setOnClickListener(new View.OnClickListener() {
@@ -119,7 +118,26 @@ public class Login extends AppCompatActivity {
                                                 usersRef.addValueEventListener(new ValueEventListener() {
                                                 @Override
                                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                    if (snapshot.exists()) {
+                                                    if (snapshot.exists())
+                                                    {
+                                                        String role = snapshot.child("Role").getValue().toString();
+                                                         if(role=="Farmer")
+                                                         {
+                                                             Intent mainIntent = new Intent(Login.this, Farmer1.class);
+                                                             mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                             startActivity(mainIntent);
+                                                         }
+                                                         if(role=="Driver")
+                                                         {
+
+                                                         }
+                                                         if(role=="Factory-Owner")
+                                                         {
+                                                             Intent mainIntent = new Intent(Login.this, activity_vendor.class);
+                                                             mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                             startActivity(mainIntent);
+                                                         }
+
                                                         Intent mainIntent = new Intent(Login.this, MainActivity.class);
                                                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                         startActivity(mainIntent);
