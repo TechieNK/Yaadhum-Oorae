@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".driverdetails2"></activity>
+        <activity android:name=".Farmer"></activity>
+        <activity android:name=".driverdetails2" />
         <activity android:name=".driverdetails1" />
-        <activity android:name=".PersonalDetailsActivity"></activity>
+        <activity android:name=".PersonalDetailsActivity" />
         <activity android:name=".activity_proposal_accept" />
         <activity android:name=".activity_vendor" />
         <activity android:name=".Verfiyemail" />

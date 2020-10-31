@@ -233,7 +233,7 @@ public class PersonalDetailsActivity extends AppCompatActivity {
                                 }
                                 else if(role.equals("Farmer"))
                                 {
-                                    Intent mainIntent = new Intent(PersonalDetailsActivity.this, Farmer1.class);
+                                    Intent mainIntent = new Intent(PersonalDetailsActivity.this, Farmer.class);
                                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(mainIntent);
                                 }

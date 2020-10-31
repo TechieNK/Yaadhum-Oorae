@@ -123,7 +123,7 @@ public class Login extends AppCompatActivity {
                                                         String role = snapshot.child("Role").getValue().toString();
                                                          if(role=="Farmer")
                                                          {
-                                                             Intent mainIntent = new Intent(Login.this, Farmer1.class);
+                                                             Intent mainIntent = new Intent(Login.this, Farmer.class);
                                                              mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                              startActivity(mainIntent);
                                                          }

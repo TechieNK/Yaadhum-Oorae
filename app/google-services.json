@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "247521284229",
+    "firebase_url": "https://yaadhum-oorae-1d39a.firebaseio.com",
+    "project_id": "yaadhum-oorae-1d39a",
+    "storage_bucket": "yaadhum-oorae-1d39a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247521284229:android:df50c2ebaf53c91380d9ec",
+        "android_client_info": {
+          "package_name": "project.Yaadhum_Oorae.Activity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247521284229-8v1tf6gts637sevmcatvg5mvv6jp64it.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "project.Yaadhum_Oorae.Activity",
+            "certificate_hash": "fbd2a3ea94e482ee56386b109dc1737cec4a33c3"
+          }
+        },
+        {
+          "client_id": "247521284229-c6q855vjmmgi1jlo5end2dq236r0jnuo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCosehaRzd2RxBR_O0ybDi9KTQcM33J2Hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247521284229-c6q855vjmmgi1jlo5end2dq236r0jnuo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
